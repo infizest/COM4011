@@ -1,0 +1,6 @@
+Item,Stock Level,Unit Price,Reorder Threshold,Reorder Quantity,Total Sales
+Item 1,21,4.59,12,30,96.39
+Item 2,22,5.99,15,20,131.78
+Item 3,35,2.99,18,50,104.65
+Item 4,6,13.79,2,5,82.74
+Item 5,14,8.79,10,10,123.05999999999999
