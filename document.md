@@ -1,31 +1,34 @@
-# COM4011: Introduction to Programming
+# Stock Control and Sales Management System
 
-## Assignment: Stock Management for a Retailer
+This Java application provides a menu-driven system for managing stock and sales data for a small inventory. It allows users to input stock details, sales data, and generates a CSV report summarizing the stock and sales information.
 
-This assignment involves solving three tasks in Java programming, with a focus on creating a stock management system for a retailer. The following guide outlines the steps and details of Task 1.
+## Features
+1. **Stock Data Entry**:
+   - Enter product ID, stock level, unit price, reorder threshold, and reorder quantity for up to 5 products.
+   - Calculates and displays the total cost of stock.
 
----
+2. **Sales Data Entry**:
+   - Enter sales quantity for each product.
+   - Calculates the total sales amount.
+   - Checks if stock levels fall below the reorder threshold and recommends reordering.
 
-## Task 1: Menu Display and Input Validation
+3. **CSV Report Generation**:
+   - Automatically generates a CSV file (`stock_sales_report.csv`) summarizing product stock, sales data, and the grand total sales.
 
-### Steps
+## Prerequisites
+- **Java Development Kit (JDK)**: Version 8 or later.
+- A text editor or IDE to edit and run the Java code.
 
-#### 1. **Flowchart and Pseudocode**
-   - **Flowchart**: Create a flowchart illustrating the menu system.
-   - **Pseudocode**: Write pseudocode detailing user interactions, menu option selection, and program exit logic.
+## Installation
+1. Clone or download the repository to your local machine.
+2. Save the following Java files in the same directory:
+   - `StockControlMenu.java`
+   - `Run.java`
 
-#### 2. **Java Program Implementation**
-   - Develop a Java program that:
-     - Displays a menu.
-     - Handles user inputs and validates them.
-     - Includes placeholder methods (`StockData` and `SalesData`) with print statements.
-
-#### 3. **Testing**
-   - Compile and run the program.
-   - Test the menu display and option handling functionality.
-   - Capture screenshots of the outputs.
-
-#### 4. **Output Documentation**
-   - Save the Java code as plain text and include it in the appendix.
-
----
+## Usage
+### Step 1: Compile the Code
+1. Open a terminal or command prompt.
+2. Navigate to the directory where the Java files are saved.
+3. Compile the files:
+   ```bash
+   javac StockControlMenu.java Run.java

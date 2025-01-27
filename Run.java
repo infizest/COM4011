@@ -10,7 +10,7 @@ public class Run {
     public static void generateCSV() {
         String fileName = "stock_sales_report.csv";
         double grandTotalSales = 0; // To track the sum of total sales
-
+ 
         try (FileWriter writer = new FileWriter(fileName)) {
             // Writing the header row
             writer.append("Product ID,Stock Level,Unit Price,Reorder Threshold,Reorder Quantity,Total Sales\n");
