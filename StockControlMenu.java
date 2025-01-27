@@ -1,9 +1,8 @@
-// Task 1 : Menu Display and Input Validation
-
 import java.util.Scanner;
 
 public class StockControlMenu {
     // Shared arrays for stock data
+    static String[] productId = new String[5]; // Product IDs as strings
     static int[] stockLevel = new int[5];
     static double[] unitPrice = new double[5];
     static int[] threshold = new int[5];
@@ -30,10 +29,10 @@ public class StockControlMenu {
 
             switch (choice) {
                 case 1:
-                    StockControl.StockData(scanner);
+                    StockData(scanner);
                     break;
                 case 2:
-                    SalesControl.SalesData(scanner);
+                    SalesData(scanner);
                     break;
                 case 3:
                     System.out.println("Exiting program.");
@@ -43,5 +42,50 @@ public class StockControlMenu {
                     System.out.println("Invalid choice. Please select 1, 2, or 3.");
             }
         }
+    }
+
+    public static void StockData(Scanner scanner) {
+        double totalCost = 0;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter product ID for item " + (i + 1) + " (e.g., cd5751):");
+            productId[i] = scanner.next(); // Accept alphanumeric product ID
+
+            System.out.println("Enter stock level for product ID " + productId[i] + ":");
+            stockLevel[i] = scanner.nextInt();
+
+            System.out.println("Enter unit price for product ID " + productId[i] + ":");
+            unitPrice[i] = scanner.nextDouble();
+
+            System.out.println("Enter reorder threshold for product ID " + productId[i] + ":");
+            threshold[i] = scanner.nextInt();
+
+            System.out.println("Enter reorder quantity for product ID " + productId[i] + ":");
+            reorderQty[i] = scanner.nextInt();
+
+            totalCost += stockLevel[i] * unitPrice[i];
+        }
+
+        System.out.println("The total cost of stock is: " + totalCost);
+    }
+
+    public static void SalesData(Scanner scanner) {
+        int[] salesQty = new int[5];
+        double totalSales = 0;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter sales quantity for product ID " + productId[i] + ":");
+            salesQty[i] = scanner.nextInt();
+
+            // Calculate total sales
+            totalSales += salesQty[i] * unitPrice[i];
+
+            // Check stock levels against threshold and display reorder information if needed
+            if (stockLevel[i] - salesQty[i] < threshold[i]) {
+                System.out.println("Reorder Product ID: " + productId[i] + " | Quantity: " + reorderQty[i]);
+            }
+        }
+
+        System.out.println("Total sales amount: " + totalSales);
     }
 }
