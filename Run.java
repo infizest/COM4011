@@ -29,7 +29,7 @@ public class Run {
                 writer.append(totalSales + "\n");
             }
 
-            // Write the grand total sales as the last row
+            //grand total sales as the last row
             writer.append("\n");
             writer.append(",,,Grand Total Sales,,," + grandTotalSales + "\n");
 
